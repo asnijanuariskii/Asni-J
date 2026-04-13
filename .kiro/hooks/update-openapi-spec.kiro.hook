@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "name": "Update OpenAPI Spec",
+  "description": "Reminds to update docs/openapi.yaml when backend API route files are edited.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "backend/**/routes/**",
+      "backend/**/handlers/**",
+      "backend/**/api/**"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A backend API route file was edited. Check if docs/openapi.yaml needs to be updated to reflect the changes. If the API contract changed (new endpoints, modified request/response schemas, changed status codes), update the OpenAPI spec accordingly."
+  }
+}

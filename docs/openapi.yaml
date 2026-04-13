@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: Project API
+  description: API specification for this project
+  version: 0.1.0
+
+servers:
+  - url: https://<your-domain>/api
+    description: Production
+  - url: http://localhost:8080/api
+    description: Local development
+
+paths: {}
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
