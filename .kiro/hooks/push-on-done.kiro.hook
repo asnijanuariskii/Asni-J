@@ -8,6 +8,6 @@
   },
   "then": {
     "type": "runCommand",
-    "command": "git add -A && git diff --cached --quiet || git commit -m auto-kiro-update && git push origin main"
+    "command": "git add -A; git diff --cached --quiet; if ($LASTEXITCODE -ne 0) { git commit -m auto-kiro-update; git push origin master }"
   }
 }
